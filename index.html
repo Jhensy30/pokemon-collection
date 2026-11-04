@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokémon TCG Collection</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pokémon TCG Collection</h1>
+        <p>Manage your Pokémon card collection</p>
+    </header>
+
+    <main>
+        <h2>My Collections</h2>
+
+        <section class="languages">
+            <button id="englishBtn">English</button>
+            <button id="spanishBtn">Español</button>
+        </section>
+
+        
+<!-- SELECTOR DE EXPANSIONES POKÉMON -->
+
+<!-- RESPALDO DEL PROGRESO DE COLECCIONES -->
+
+<section class="collection-backup">
+
+    <h3>Collection Backup</h3>
+
+    <div class="backup-buttons">
+
+        <button type="button" id="exportProgressBtn">
+            Export Progress
+        </button>
+
+        <button type="button" id="importProgressBtn">
+            Import Progress
+        </button>
+
+        <input
+            type="file"
+            id="importProgressFile"
+            accept=".json,application/json"
+            hidden
+        >
+
+    </div>
+
+</section>
+
+<section class="expansion-selector">
+
+    <h2>Pokémon TCG Expansions</h2>
+
+    
+<div class="expansion-options" id="expansionOptions">
+
+    <button
+        type="button"
+        class="expansion-option active"
+        id="prismaticExpansionBtn">
+        Prismatic Evolutions
+    </button>
+
+</div>
+
+
+</section>
+
+        
+<section class="expansion" id="prismatic-evolutions">
+
+    <h2>Prismatic Evolutions</h2>
+
+    <p>Scarlet & Violet — Prismatic Evolutions</p>
+
+    <div class="collection-progress">
+        <h3>Collection Progress</h3>
+        <p id="progressText">0 / 0 cards collected</p>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+    </div>
+
+<!-- FILTROS DE LA COLECCIÓN -->
+
+<!-- BUSCADOR DE CARTAS -->
+
+<div class="collection-search">
+
+    <input
+        type="search"
+        id="cardSearch"
+        placeholder="Search by name or card number..."
+        autocomplete="off"
+        aria-label="Search Pokémon cards"
+    >
+
+</div>
+
+<div class="collection-filters">
+
+    <button class="filter-btn active"
+            data-filter="all">
+        All Cards
+    </button>
+
+    <button class="filter-btn"
+            data-filter="owned">
+        Owned
+    </button>
+
+    <button class="filter-btn"
+            data-filter="missing">
+        Missing
+    </button>
+
+</div>
+
+    <div class="card-gallery" id="cardGallery">
+        <!-- Aquí aparecerán las cartas -->
+    </div>
+
+</section>
+
+<!-- COLECCIÓN ADICIONAL -->
+
+<section class="extra-collection">
+
+    <h2>Additional Cards</h2>
+
+    <p>Prismatic Evolutions - Special Collection</p>
+
+    <h3>Additional Collection Progress</h3>
+
+    <p id="extraProgressText">
+        0 / 10 cards collected
+    </p>
+
+<!-- BUSCADOR DE CARTAS ADICIONALES -->
+
+<div class="extra-search-container">
+    <input
+        type="search"
+        id="extraCardSearch"
+        placeholder="Search additional cards..."
+        autocomplete="off"
+    >
+</div>
+
+<!-- FILTROS DE CARTAS ADICIONALES -->
+
+<div class="extra-filters">
+    <button class="extra-filter-btn active"
+            data-filter="all">
+        All Cards
+    </button>
+
+    <button class="extra-filter-btn"
+            data-filter="owned">
+        Owned
+    </button>
+
+    <button class="extra-filter-btn"
+            data-filter="missing">
+        Missing
+    </button>
+</div>
+
+    <div class="extra-progress-bar">
+        <div id="extraProgressFill"></div>
+    </div>
+
+    <div id="extraCardGallery"
+         class="extra-card-gallery">
+    </div>
+
+</section>
+
+    </main>
+
+<!-- VISOR DE CARTAS -->
+
+<div id="cardModal" class="card-modal">
+
+    <button id="closeModal" class="close-modal"
+            aria-label="Close card">
+        &times;
+    </button>
+
+    <div class="modal-content">
+
+        
+<div class="modal-card" id="modalCard">
+
+    <img
+        id="modalImage"
+        src=""
+        alt="Pokémon card"
+    >
+
+    <div class="holo-effect"></div>
+
+</div>
+
+
+        <h2 id="modalCardName"></h2>
+
+    </div>
+
+</div>
+
+    
+
+<script src="data/prismatic-en.js"></script>
+<script src="data/prismatic-extras-en.js"></script>
+<script src="data/expansions.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

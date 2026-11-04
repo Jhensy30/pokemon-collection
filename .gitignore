@@ -1,0 +1,15 @@
+
+# Respaldos personales de las colecciones
+pokemon-collection-backup.json
+*collection-backup*.json
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local del editor
+.vscode/
